@@ -61,7 +61,7 @@ function register()
                 msgReturn('Erro' . $user->msgErro, 'bg-danger', "../views/cadastrar.php");
             }
         } else {
-            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning', "../views/cadastrar.php");
+            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-danger', "../views/cadastrar.php");
         }
     }
 }

@@ -12,14 +12,14 @@ include 'header.php';
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="senha" placeholder="Senha">
             <input type="password" name="confirma_senha" placeholder="Confirmar Senha">
-            <input type="submit" value="Cadastrar">
+            <input type="submit" value="Cadastrar" style="margin-top: 15px; margin-left: 25px; color: white">
 
         </form>
         <?php
 
         if (isset($_SESSION['return'])) {
         ?>
-            <div class="<?= $_SESSION['return']['class'] ?>">
+            <div class="alerta <?= $_SESSION['return']['class'] ?>">
                 <?=
                 $_SESSION['return']['msg'];
                 ?>
