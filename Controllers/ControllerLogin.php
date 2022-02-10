@@ -21,7 +21,7 @@ function login()
                 if (!empty($logar)) {
                     $_SESSION['login']['user'] = $logar['nome'];
                     $_SESSION['login']['expirate'] = date("d-m-Y H:i:s", strtotime("+1 hours"));
-                    header("location: ../views/acessado.php");
+                    header('location: ../views/acessado.php');
                 } else {
                     msgReturn("E-mail e/ou senha inválidos, tente novamente!", 'msg-erro');
                 }
@@ -55,11 +55,7 @@ function register()
                         msgReturn('Email já cadastrado!' ,'bg-danger');
                     }
                 } else {
-                    ?>
-                    <div class="msg-erro">
-                        Senhas diferentes, favor conferir!
-                    </div>
-                <?php
+                    msgReturn('Senhas diferentes, favor conferir!', 'bg-danger');
                 }
             } else {
                 msgReturn('Erro' . $user->msgErro, 'bg-danger');
