@@ -3,7 +3,7 @@
 ### Instruções para o primeiro uso
 ---
 
-*Necessário criar a base, o script para a criação do banco de dados está localizado na raiz do projeto com nome "Querys.sql"
+*Necessário criar a base, o script para a criação do banco de dados está localizado na raiz do projeto com nome "query.sql"
 
 *Abrir servidor local utilizando o comando "php -S 'host':'porta'" no terminal.
 
