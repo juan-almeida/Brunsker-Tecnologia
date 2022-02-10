@@ -1,6 +1,7 @@
 # Teste Brunsker-Tecnologia
 
-### Instruções para o primeiro uso:
+### Instruções para o primeiro uso
+---
 
 *Necessário criar a base, o script para a criação do banco de dados está localizado na raiz do projeto com nome "Querys.sql"
 
@@ -10,7 +11,6 @@
 
 ### Autor
 ---
-
 
  <sub><b>Juan de Almeida Silva - 2022</b></sub></a> 
 
