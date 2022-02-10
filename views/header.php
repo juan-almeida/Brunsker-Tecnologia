@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -9,3 +12,4 @@
     <link rel="icon" href="../public/img/favicon.ico">
     <title>Locação de Imoveis</title>
   </head>
+  

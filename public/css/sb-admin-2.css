@@ -11280,3 +11280,11 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+
+.alerta{
+  height: 15px;
+  width: 500px;
+  padding: 20px;
+  margin-left: 100px;
+   margin-top: 10px
+}

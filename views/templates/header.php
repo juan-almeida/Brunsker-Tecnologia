@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if(empty($_SESSION['login']) || $_SESSION['login']['expirate']>date("d-m-Y H:i:s")){
+if(empty($_SESSION['login']) || $_SESSION['login']['expirate'] < date("d-m-Y H:i:s")){
     $_SESSION['return']['msg'] = "Você foi redirecionado, pois não está logado";
     $_SESSION['return']['class'] = "bg-danger";
     header('location: ../../');

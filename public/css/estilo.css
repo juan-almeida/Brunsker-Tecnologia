@@ -82,4 +82,25 @@ input[type=submit]{
     border-radius: 30px;
 }
 
+.bg-danger{
+    background-color: #ff0000;
+    color: white;
+}
 
+.bg-warning{
+    background-color: yellow;
+    color: white;
+}
+
+.bg-success{
+    background-color: green;
+    color: white;
+}
+
+.alerta{
+    height: 15px;
+    width: 500px;
+    padding: 20px;
+    margin-left: 100px;
+     margin-top: 10px
+}

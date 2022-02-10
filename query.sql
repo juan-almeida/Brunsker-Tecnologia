@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS `imoveis` (
   `quartos` int DEFAULT NULL,
   `banheiros` int DEFAULT NULL,
   `vagas` int DEFAULT NULL,
-  `cep` int DEFAULT NULL,
+  `cep` varchar(10) DEFAULT NULL,
   `rua` varchar(255) DEFAULT NULL,
   `bairro` varchar(255) DEFAULT NULL,
   `cidade` varchar(255) DEFAULT NULL,

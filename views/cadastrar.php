@@ -1,16 +1,8 @@
+<?php
 
+include 'header.php';
 
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locação de Imoveis</title>
-    <link rel="stylesheet" href="../public/css/estilo.css">
-</head>
-
+ ?>
 <body>
     <div id="corpo-cad">
         <h1>Cadastre-se</h1>
@@ -21,8 +13,24 @@
             <input type="password" name="senha" placeholder="Senha">
             <input type="password" name="confirma_senha" placeholder="Confirmar Senha">
             <input type="submit" value="Cadastrar">
-            
+
         </form>
+        <?php
+
+        if (isset($_SESSION['return'])) {
+        ?>
+            <div class="<?= $_SESSION['return']['class'] ?>">
+                <?=
+                $_SESSION['return']['msg'];
+                ?>
+
+            </div>
+
+        <?php
+            unset($_SESSION['return']);
+        }
+        ?>
+
     </div>
 </body>
 

@@ -39,28 +39,43 @@ function register()
 
 
         //campo vazio?
-        if (!empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro) 
-        && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero) ) {
+        if (
+            !empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro)
+            && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero)
+        ) {
             $imoveis->connection();
             if (empty($imoveis->msgErro)) {
-                    if ($imoveis->cadastrar($nome, $valor, $tipo, $locacao, $quartos, $banheiros, $vagas,
-                    $cep, $rua, $bairro, $cidade, $uf, $complemento, $numero)) {
-                        msgReturn("Cadastrado com sucesso!", 'bg-success text-light pl-2');
-                        header('location: ../views/acessado.php');
-                    } else {
-                        msgReturn('Imóvel já cadastrado!' ,'bg-danger');
-                    }
-                
+                if ($imoveis->cadastrar(
+                    $nome,
+                    $valor,
+                    $tipo,
+                    $locacao,
+                    $quartos,
+                    $banheiros,
+                    $vagas,
+                    $cep,
+                    $rua,
+                    $bairro,
+                    $cidade,
+                    $uf,
+                    $complemento,
+                    $numero
+                )) {
+                    msgReturn("Cadastrado com sucesso!", 'bg-success text-light pl-2', '../views/acessado.php');
+                } else {
+                    msgReturn('Imóvel já cadastrado!', 'bg-danger', '../views/formImoveis.php');
+                }
             } else {
-                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger');
+                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger', '../views/formImoveis.php');
             }
         } else {
-            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
+            msgReturn('É necessário o preenchimento de todos os campos!', 'bg-warning', '../views/formImoveis.php');
         }
     }
 }
 
-function update(){
+function update()
+{
     $id = $_POST['id_imovel'];
     header("location: ../views/formUpdate.php?id_imovel=$id");
 }
@@ -68,9 +83,13 @@ function update(){
 
 function updateData()
 {
-    if (isset($_POST['id_imovel'])) {
+    $id_imovel = addslashes($_POST['id_imovel']);
+
+    if (
+        !empty($id_imovel) && !empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro)
+        && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero)
+    ) {
         $imoveis = new controllerImoveis();
-        $id_imovel = addslashes($_POST['id_imovel']);
         $nome = addslashes($_POST['nome']);
         $valor = addslashes($_POST['valor']);
         $tipo = addslashes($_POST['tipo']);
@@ -86,41 +105,48 @@ function updateData()
         $complemento = addslashes($_POST['complemento']);
         $numero = addslashes($_POST['numero']);
 
-
-        //campo vazio?
-        if (!empty($id_imovel) && !empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro) 
-        && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero) ) {
-            $imoveis->connection();
-            if (empty($imoveis->msgErro)) {
-                    if ($imoveis->editar($id_imovel, $nome, $valor, $tipo, $locacao, $quartos, $banheiros, $vagas,
-                    $cep, $rua, $bairro, $cidade, $uf, $complemento, $numero)) {
-                        msgReturn("Editado com sucesso!", 'bg-success text-light pl-2');
-                        header('location: ../views/acessado.php');
-                    } else {
-                        msgReturn('Imóvel já cadastrado!' ,'bg-warning');
-                    }
-                
+        $imoveis->connection();
+        if (empty($imoveis->msgErro)) {
+            if ($imoveis->editar(
+                $id_imovel,
+                $nome,
+                $valor,
+                $tipo,
+                $locacao,
+                $quartos,
+                $banheiros,
+                $vagas,
+                $cep,
+                $rua,
+                $bairro,
+                $cidade,
+                $uf,
+                $complemento,
+                $numero
+            )) {
+                msgReturn("Editado com sucesso!", 'bg-success text-light pl-2', '../views/acessado.php');
             } else {
-                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger');
+                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger', "../views/formUpdate.php?id_imovel=$id_imovel");
             }
-        } else {
-            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
         }
+    } else {
+        msgReturn('É necessário o preenchimento de todos os campos!', 'bg-warning', "../views/formUpdate.php?id_imovel=$id_imovel");
     }
 }
 
-function delete(){
+function delete()
+{
     $id = $_POST['id'];
 
-    $imoveis=new controllerImoveis();
+    $imoveis = new controllerImoveis();
 
     $imoveis->deletar($id);
-    MsgReturn("Deletado com sucesso", "bg-danger text-light pl-2");
-    header('location: ../views/acessado.php');
-
+    MsgReturn("Deletado com sucesso", "bg-danger text-light pl-2", '../views/acessado.php');
 }
-function msgReturn($msg, $class)
+
+function msgReturn($msg, $class, $pagina)
 {
     $_SESSION['return']['msg'] = $msg;
     $_SESSION['return']['class'] = $class;
+    header("location: " . $pagina);
 }

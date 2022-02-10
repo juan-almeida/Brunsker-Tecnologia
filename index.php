@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 include "views/header.php";
 
 include 'views/home.php';
@@ -10,7 +8,7 @@ include 'views/footer.php';
 
 if (isset($_SESSION['return'])) {
 ?>
-    <div class="<?= $_SESSION['return']['class']?>">
+    <div class="alerta <?= $_SESSION['return']['class']?>" >
         <?=
         $_SESSION['return']['msg'];
         ?>

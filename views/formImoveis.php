@@ -21,7 +21,7 @@ include 'templates/header.php';
                     <div class="p-5">
 
                         <form method="post" action="../Controllers/Imoveis.php">
-                            <div class="row pb-3" >
+                            <div class="row pb-3">
                                 <div class="pb-2 col-sm-6 mb-3 mb-sm-0">
                                     <input type="text" class="form-control form-control-user" name="nome" placeholder="Nome">
                                 </div>
@@ -67,6 +67,7 @@ include 'templates/header.php';
                             </div>
 
                             <input type="submit" value="Cadastrar Imóvel" class=" btn btn-primary">
+                            <a href = "acessado.php" class=" btn btn-danger">Cancelar</a>
 
                     </div>
 
@@ -78,6 +79,21 @@ include 'templates/header.php';
             </div>
         </div>
     </div>
+    <?php
+    if (isset($_SESSION['return'])) {
+    ?>
+        <div class="<?= $_SESSION['return']['class'] ?> alerta text-light">
+            <?=
+            $_SESSION['return']['msg'];
+            ?>
+
+        </div>
+
+    <?php
+
+        unset($_SESSION['return']);
+    }
+    ?>
 </div>
 
 </div>

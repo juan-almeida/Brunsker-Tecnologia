@@ -2,7 +2,7 @@
 
 include 'templates/header.php';
 
-$imovel =new controllerImoveis();
+$imovel = new controllerImoveis();
 
 $result = $imovel->getImovel($_GET['id_imovel']);
 
@@ -71,6 +71,7 @@ $result = $imovel->getImovel($_GET['id_imovel']);
                             </div>
 
                             <input type="submit" value="Editar Imóvel" class=" btn btn-primary">
+                            <a href = "acessado.php" class=" btn btn-danger">Cancelar</a>
 
                     </div>
 
@@ -83,6 +84,21 @@ $result = $imovel->getImovel($_GET['id_imovel']);
             </div>
         </div>
     </div>
+    <?php
+    if (isset($_SESSION['return'])) {
+    ?>
+        <div class="<?= $_SESSION['return']['class'] ?> alerta text-light">
+            <?=
+            $_SESSION['return']['msg'];
+            ?>
+
+        </div>
+
+    <?php
+
+        unset($_SESSION['return']);
+    }
+    ?>
 </div>
 
 </div>

@@ -23,16 +23,16 @@ function login()
                     $_SESSION['login']['expirate'] = date("d-m-Y H:i:s", strtotime("+1 hours"));
                     header('location: ../views/acessado.php');
                 } else {
-                    msgReturn("E-mail e/ou senha inválidos, tente novamente!", 'msg-erro');
+                    msgReturn("E-mail e/ou senha inválidos, tente novamente!", 'bg-danger', '../');
                 }
             } else {
-                msgReturn('Erro' . $user->msgErro, 'msg-erro');
+                msgReturn('Erro' . $user->msgErro, 'bg-danger', '../');
             }
         } else {
-            msgReturn('Preencha todos os campos!', 'msg-erro');
+            msgReturn('Preencha todos os campos!', 'bg-danger', '../' );
         }
     } else {
-        msgReturn("Preencha todos os campos, por gentileza", 'msg-erro');
+        msgReturn("Preencha todos os campos, por gentileza", 'bg-danger', '../');
     }
 }
 
@@ -50,25 +50,25 @@ function register()
             if (empty($user->msgErro)) {
                 if ($senha == $confirmaSenha) {
                     if ($user->cadastrar($nome, $email, $senha)) {
-                        msgReturn("Cadastrado com sucesso!", 'msg-sucesso');
+                        msgReturn("Cadastrado com sucesso!", 'msg-sucesso', '../');
                     } else {
-                        msgReturn('Email já cadastrado!' ,'bg-danger');
+                        msgReturn('Email já cadastrado!' ,'bg-danger', "../views/cadastrar.php");
                     }
                 } else {
-                    msgReturn('Senhas diferentes, favor conferir!', 'bg-danger');
+                    msgReturn('Senhas diferentes, favor conferir!', 'bg-danger', "../views/cadastrar.php");
                 }
             } else {
-                msgReturn('Erro' . $user->msgErro, 'bg-danger');
+                msgReturn('Erro' . $user->msgErro, 'bg-danger', "../views/cadastrar.php");
             }
         } else {
-            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
+            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning', "../views/cadastrar.php");
         }
     }
 }
 
-function msgReturn($msg, $class)
+function msgReturn($msg, $class, $pagina)
 {
     $_SESSION['return']['msg'] = $msg;
     $_SESSION['return']['class'] = $class;
-    header("location: ../");
+    header("location: ". $pagina);
 }
