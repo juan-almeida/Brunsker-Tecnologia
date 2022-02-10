@@ -1,18 +1,18 @@
 # Teste Brunsker-Tecnologia
 
-Instruções para o primeiro uso:
+### Instruções para o primeiro uso
+---
 
-*Necessário criar a base, o script para a criação do banco de dados está localizado na raiz do projeto com nome "Querys.sql"
+*Necessário criar a base, o script para a criação do banco de dados está localizado na raiz do projeto com nome "query.sql"
 
 *Abrir servidor local utilizando o comando "php -S 'host':'porta'" no terminal.
 
-Após o procedimento, deve ser feito o acesso pelo servidor local que foi criado e o sistema estará apto para ser usado.
+*Após o procedimento, deve ser feito o acesso pelo servidor local que foi criado, e o sistema estará apto para ser usado.
 
 ### Autor
 ---
 
-
- <sub><b>Juan Almeida</b></sub></a> 
+ <sub><b>Juan de Almeida Silva - 2022</b></sub></a> 
 
 
 Feito por Juan Almeida 👋🏽 Entre em contato!
