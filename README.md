@@ -13,10 +13,9 @@
 ---
 
 <img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQF-JV27CERa_w/profile-displayphoto-shrink_800_800/0/1644343541110?e=1649894400&v=beta&t=zQ8C9yvTcMeDYDNjWcvDc35Pz1MEy6-sqHbZbQ6qZ2U" width="100px;" alt=""/>
- <br />
- <sub><b>Juan de Almeida Silva - 2022</b></sub></a> 
+ <b>Juan de Almeida Silva - 2022</b>
 
-
+ 
 Feito por Juan Almeida 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Juan-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/juan-de-almeida-silva-ab144b21a/)](https://www.linkedin.com/in/juan-de-almeida-silva-ab144b21a/) 
