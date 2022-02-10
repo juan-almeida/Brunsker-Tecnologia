@@ -52,12 +52,7 @@ function register()
                     if ($user->cadastrar($nome, $email, $senha)) {
                         msgReturn("Cadastrado com sucesso!", 'msg-sucesso');
                     } else {
-?>
-                        <div class="msg-erro">
-                            E-mail já cadastrado!
-                        </div>
-
-                    <?php
+                        msgReturn('Email já cadastrado!' ,'bg-danger');
                     }
                 } else {
                     ?>
@@ -67,21 +62,10 @@ function register()
                 <?php
                 }
             } else {
-                ?>
-                <div class="msg-erro">
-                    <?php
-                    echo "Erro: " . $user->msgErro;
-                    ?>
-                </div>
-
-            <?php
+                msgReturn('Erro' . $user->msgErro, 'bg-danger');
             }
         } else {
-            ?>
-            <div class="msg-erro">
-                É necessário o preenchimento de todos os campos!
-            </div>
-<?php
+            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
         }
     }
 }

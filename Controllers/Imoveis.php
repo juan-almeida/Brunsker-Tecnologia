@@ -48,30 +48,14 @@ function register()
                         msgReturn("Cadastrado com sucesso!", 'bg-success text-light pl-2');
                         header('location: ../views/acessado.php');
                     } else {
-?>
-                        <div class="msg-erro">
-                            Imóveis já cadastrado!
-                        </div>
-
-                    <?php
+                        msgReturn('Imóvel já cadastrado!' ,'bg-danger');
                     }
                 
             } else {
-                ?>
-                <div class="msg-erro">
-                    <?php
-                    echo "Erro: " . $imoveis->msgErro;
-                    ?>
-                </div>
-
-            <?php
+                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger');
             }
         } else {
-            ?>
-            <div class="msg-erro">
-                É necessário o preenchimento de todos os campos!
-            </div>
-<?php
+            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
         }
     }
 }
@@ -113,30 +97,14 @@ function updateData()
                         msgReturn("Editado com sucesso!", 'bg-success text-light pl-2');
                         header('location: ../views/acessado.php');
                     } else {
-?>
-                        <div class="msg-erro">
-                            Imóveis já cadastrado!
-                        </div>
-
-                    <?php
+                        msgReturn('Imóvel já cadastrado!' ,'bg-warning');
                     }
                 
             } else {
-                ?>
-                <div class="msg-erro">
-                    <?php
-                    echo "Erro: " . $imoveis->msgErro;
-                    ?>
-                </div>
-
-            <?php
+                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger');
             }
         } else {
-            ?>
-            <div class="msg-erro">
-                É necessário o preenchimento de todos os campos!
-            </div>
-<?php
+            msgReturn('É necessário o preenchimento de todos os campos!' , 'bg-warning');
         }
     }
 }
