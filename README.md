@@ -16,7 +16,7 @@
  <b>Juan de Almeida Silva - 2022</b>
 
  
-Feito por Juan Almeida 👋🏽 Entre em contato!
+Desenvolvido por Juan Almeida 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-Juan-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/juan-de-almeida-silva-ab144b21a/)](https://www.linkedin.com/in/juan-de-almeida-silva-ab144b21a/) 
 [![Gmail Badge](https://img.shields.io/badge/-juanalmeida789@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:juanalmeida789@gmail.com)](mailto:juanalmeida789@gmail.com)
