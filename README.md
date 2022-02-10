@@ -6,7 +6,7 @@
 
 *Abrir servidor local utilizando o comando "php -S 'host':'porta'" no terminal.
 
-Após o procedimento, deve ser feito o acesso pelo servidor local que foi criado e o sistema estará apto para ser usado.
+*Após o procedimento, deve ser feito o acesso pelo servidor local que foi criado, e o sistema estará apto para ser usado.
 
 ### Autor
 ---
