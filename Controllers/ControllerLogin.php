@@ -18,9 +18,11 @@ function login()
             if (empty($user->msgErro)) {
                 $logar = $user->logar($email, $senha);
                 
+                
                 if (!empty($logar)) {
                     $_SESSION['login']['user'] = $logar['nome'];
                     $_SESSION['login']['expirate'] = date("d-m-Y H:i:s", strtotime("+1 hours"));
+                    $_SESSION['login']['id_usuario'] = $logar['id_usuario'];
                     header('location: ../views/acessado.php');
                 } else {
                     msgReturn("E-mail e/ou senha inválidos, tente novamente!", 'bg-danger', '../');

@@ -85,10 +85,7 @@ function updateData()
 {
     $id_imovel = addslashes($_POST['id_imovel']);
 
-    if (
-        !empty($id_imovel) && !empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro)
-        && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero)
-    ) {
+    if (isset($_POST['nome'])) {
         $imoveis = new controllerImoveis();
         $nome = addslashes($_POST['nome']);
         $valor = addslashes($_POST['valor']);
@@ -105,32 +102,40 @@ function updateData()
         $complemento = addslashes($_POST['complemento']);
         $numero = addslashes($_POST['numero']);
 
-        $imoveis->connection();
-        if (empty($imoveis->msgErro)) {
-            if ($imoveis->editar(
-                $id_imovel,
-                $nome,
-                $valor,
-                $tipo,
-                $locacao,
-                $quartos,
-                $banheiros,
-                $vagas,
-                $cep,
-                $rua,
-                $bairro,
-                $cidade,
-                $uf,
-                $complemento,
-                $numero
-            )) {
-                msgReturn("Editado com sucesso!", 'bg-success text-light pl-2', '../views/acessado.php');
-            } else {
-                msgReturn('Erro' . $imoveis->msgErro, 'bg-danger', "../views/formUpdate.php?id_imovel=$id_imovel");
+
+        if (
+            !empty($nome) && !empty($valor) && !empty($tipo) && !empty($locacao) && !empty($quartos) && !empty($banheiros) && !empty($vagas) && !empty($cep) && !empty($rua) && !empty($bairro)
+            && !empty($cidade) && !empty($uf) && !empty($complemento) && !empty($numero)
+        ) {
+
+
+            $imoveis->connection();
+            if (empty($imoveis->msgErro)) {
+                if ($imoveis->editar(
+                    $id_imovel,
+                    $nome,
+                    $valor,
+                    $tipo,
+                    $locacao,
+                    $quartos,
+                    $banheiros,
+                    $vagas,
+                    $cep,
+                    $rua,
+                    $bairro,
+                    $cidade,
+                    $uf,
+                    $complemento,
+                    $numero
+                )) {
+                    msgReturn("Editado com sucesso!", 'bg-success text-light pl-2', '../views/acessado.php');
+                } else {
+                    msgReturn('Erro' . $imoveis->msgErro, 'bg-danger', "../views/formUpdate.php?id_imovel=$id_imovel");
+                }
             }
+        } else {
+            msgReturn('É necessário o preenchimento de todos os campos!', 'bg-warning', "../views/formUpdate.php?id_imovel=$id_imovel");
         }
-    } else {
-        msgReturn('É necessário o preenchimento de todos os campos!', 'bg-warning', "../views/formUpdate.php?id_imovel=$id_imovel");
     }
 }
 

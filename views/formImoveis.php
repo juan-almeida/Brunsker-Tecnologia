@@ -44,7 +44,7 @@ include 'templates/header.php';
                                     <input type="number" class="form-control form-control-user" name="vagas" placeholder="Nº de Vagas">
                                 </div>
                                 <div class="pb-2 col-sm-6">
-                                    <input type="text" class="form-control form-control-user" name="cep" placeholder="Digite o CEP" maxlength="9" onblur="pesquisacep(this.value)" value='' ;>
+                                    <input type="text" class="form-control form-control-user" name="cep" id="cep" placeholder="Digite o CEP" maxlength="9" onblur="pesquisacep(this.value)" value='' ;>
                                 </div>
                                 <div class="pb-2 col-sm-6">
                                     <input type="text" class="form-control form-control-user" name="bairro" placeholder="Bairro">
@@ -99,6 +99,11 @@ include 'templates/header.php';
 </div>
 
 <script>
+
+    jQuery(function($){
+        $("#cep").mask("99999-999")
+    });
+
     function limpa_formulário_cep() {
         //Limpa valores do formulário de cep.
         document.getElementsByName('rua')[0].value = ("");

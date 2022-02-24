@@ -7,6 +7,8 @@ class controllerImoveis
     public $msgErro = "";
     private $pdo;
 
+    
+
     public function connection()
     {
         include '../db.php';
@@ -104,9 +106,13 @@ class controllerImoveis
    }
     public function show()
     {
+        $id_user = $_SESSION['login']['id_usuario'];
         $this->connection();
-        $query = "SELECT * FROM imoveis";
-        $sql = $this->pdo->query($query);
+        $query = "SELECT * FROM imoveis WHERE id_usuario = ?";
+        $sql = $this->pdo->prepare($query);
+        $sql->execute([
+            $id_user
+        ]);
         if ($sql->rowCount() > 0) {
             return $sql->fetchAll();
         } else {

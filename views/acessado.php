@@ -31,7 +31,7 @@ include 'templates/header.php';
                                     <th>Banheiros</th>
                                     <th>Vagas</th>
                                     <th>Cidade/UF</th>
-                                    <th class="text-center">Ações</th>
+                                    <th class="text-center" style="width: 105px">Ações</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -44,7 +44,7 @@ include 'templates/header.php';
                                     <th>Banheiros</th>
                                     <th>Vagas</th>
                                     <th>Cidade/UF</th>
-                                    <th class="text-center">Ações</th>
+                                    <th class="text-center" style="width: 105px">Ações</th>
                                 </tr>
                             </tfoot>
                             <tbody>
