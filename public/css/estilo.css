@@ -24,6 +24,10 @@ input{
     outline: none;
 }
 
+header, main, footer {
+    flex-shrink: 0;
+}
+
 .container{
     margin: 0 auto; width: 1600px;
 }

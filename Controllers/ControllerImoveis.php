@@ -32,8 +32,9 @@ class controllerImoveis
         }
         //Caso não cadastrado, cadastrar
         else {
-            $sql = $this->pdo->prepare("INSERT INTO imoveis(nome, valor, tipo, locacao, quartos, banheiros, vagas, cep, rua, bairro, cidade, uf, complemento, numero)
-            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $id_user = $_SESSION['login']['id_usuario'];
+            $sql = $this->pdo->prepare("INSERT INTO imoveis(nome, valor, tipo, locacao, quartos, banheiros, vagas, cep, rua, bairro, cidade, uf, complemento, numero, id_usuario)
+            VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
             $sql->execute([
                 $nome,
@@ -49,7 +50,8 @@ class controllerImoveis
                 $cidade, 
                 $uf, 
                 $complemento, 
-                $numero
+                $numero,
+                $id_user
             ]);
 
             return true;
